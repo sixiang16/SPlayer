@@ -37,7 +37,7 @@
             注意：如果歌曲没有对应的音质，将自动下载最高可用音质
           </n-text>
         </n-collapse-item>
-        <n-collapse-item v-if="isElectron" title="下载路径" name="path">
+        <n-collapse-item  title="下载路径" name="path">
           <n-input-group>
             <n-input :value="downloadPath || '未配置下载目录'" disabled>
               <template #prefix>
@@ -104,7 +104,7 @@ const downloadPath = computed(() => settingStore.downloadPath);
 
 // 是否可以下载（需要配置下载目录）
 const canDownload = computed(() => {
-  if (!isElectron) return true;
+  return true;
   return !!downloadPath.value;
 });
 
